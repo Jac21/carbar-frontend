@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Anchor from 'grommet/components/Anchor';
@@ -107,7 +108,7 @@ class Dashboard extends Component {
             The backend here is using request polling (5 second interval).
             See <Anchor path='/tasks'
               label={getMessage(intl, 'Tasks')} /> page for an example
-            of websocket communication.
+          of websocket communication.
           </Paragraph>
         </Box>
         {listNode}
