@@ -5,9 +5,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from 'grommet/components/App';
 import Split from 'grommet/components/Split';
 
-import NavSidebar from './NavSidebar';
+// import NavSidebar from './NavSidebar';
 import { navResponsive } from '../actions/nav';
 
+import Landing from '../screens/Landing';
 import Login from '../screens/Login';
 import Dashboard from '../screens/Dashboard';
 import Tasks from '../screens/Tasks';
@@ -31,7 +32,7 @@ class Main extends Component {
     const includeNav = (navActive && navEnabled);
     let nav;
     if (includeNav) {
-      nav = <NavSidebar />;
+      // nav = <NavSidebar />; // temporarily hide nav
     }
     const priority = (includeNav && responsive === 'single' ? 'left' : 'right');
 
@@ -45,7 +46,8 @@ class Main extends Component {
           >
             {nav}
             <Switch>
-              <Route exact={true} path='/' component={Dashboard} />
+              <Route exact={true} path='/' component={Landing} />
+              <Route path='/landing' component={Landing} />
               <Route path='/dashboard' component={Dashboard} />
               <Route path='/login' component={Login} />
               <Route path='/tasks/:id' component={Task} />
