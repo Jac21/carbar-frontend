@@ -1,5 +1,7 @@
 # carbar-frontend
 
+[![CircleCI](https://circleci.com/gh/Jac21/carbar-frontend.svg?style=shield)](https://circleci.com/gh/Jac21/carbar-frontend)
+
 This is a sample Grommet application for reference.
 
 To run this application, execute the following commands:
