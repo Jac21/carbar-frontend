@@ -13,7 +13,7 @@ class LandingInputs extends Component {
     super();
     this.state = {
       phoneInputValue: '', addressInputValue: '',
-      showToast: false
+      showOkToast: false, showWarningToast: false
     };
     this._onPhoneInputDOMChange = this._onPhoneInputDOMChange.bind(this);
     this._onAddressInputDOMChange = this._onAddressInputDOMChange.bind(this);
@@ -29,12 +29,20 @@ class LandingInputs extends Component {
   }
 
   _onClick() {
+    const phoneInputValue = this.state.phoneInputValue;
+    const addressInputValue = this.state.addressInputValue;
+
+    if (phoneInputValue === '' || addressInputValue === '') {
+      this.setState({ showWarningToast: true });
+      return;
+    }
+
     fetch('http://localhost:3005/users', {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
-        PHONE_NUMBER: this.state.phoneInputValue,
-        LOCATION: this.state.addressInputValue,
+        PHONE_NUMBER: phoneInputValue,
+        LOCATION: addressInputValue,
       })
     }).then(
       (response) => {
@@ -47,21 +55,30 @@ class LandingInputs extends Component {
         console.log('Fetch Error :-S', err);
       });
 
-    this.setState({ showToast: true });
+    this.setState({ showOkToast: true });
   }
 
   render() {
-    const { showToast } = this.state;
+    const { showOkToast, showWarningToast } = this.state;
     let toastNode;
-    if (showToast) {
+    if (showOkToast) {
       toastNode = (
         <Toast status='ok'
           onClose={() =>
-            this.setState({ showToast: false })}>
+            this.setState({ showOkToast: false })}>
           You're all set! Keep an eye on your phone for a text from us!
         </Toast>
       );
+    } else if (showWarningToast) {
+      toastNode = (
+        <Toast status='warning'
+          onClose={() =>
+            this.setState({ showWarningToast: false })}>
+          Please ensure both your phone number and address are entered correctly.
+        </Toast>
+      );
     }
+
     return (
       <div className='landing-inputs-wrapper'>
         {toastNode}
