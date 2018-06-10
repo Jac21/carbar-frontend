@@ -71,9 +71,8 @@ class Landing extends Component {
           <Box basis='1/2'
             align='start'
             pad='medium'>
-            <Heading margin='none'>
-              CarBar
-            </Heading>
+            <Image src='/img/V1.png'
+              size='medium' />
             <LandingInputs />
           </Box>
         </Hero>
