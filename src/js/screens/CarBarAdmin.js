@@ -49,7 +49,7 @@ class CarBarAdmin extends Component {
       headers: headers()
     }).then(
       (response) => {
-        if (response.statis === 200) {
+        if (response.status === 200) {
           this.setState({ showOkToast: true });
         }
         else if (response.status !== 200) {
