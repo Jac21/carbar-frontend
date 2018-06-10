@@ -13,6 +13,7 @@ import Anchor from 'grommet/components/Anchor';
 import Notification from 'grommet/components/Notification';
 import Distribution from 'grommet/components/Distribution';
 import Section from 'grommet/components/Section';
+import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 
 import CommonFooter from '../components/CommonFooter';
 import { pageLoaded } from './utils';
@@ -41,8 +42,8 @@ class AdminPanel extends Component {
     }
 
     return (
-      <div>
-        <Article primary={true} full={true}>
+      <div className='admin-panel-wrapper'>
+        <Article primary={true}>
           <Header fixed={true}
             float={false}
             size='xlarge'
@@ -75,7 +76,16 @@ class AdminPanel extends Component {
             </Box>
           </Header>
           <Section basis='1/2'>
-            <Title>Inventory and adjustments</Title>
+            <Title>Total Lifetime Units Sold with CarBar</Title>
+            <AnnotatedMeter legend={true}
+              size='medium'
+              type='circle'
+              units='Units'
+              max={70}
+              series={[{ label: 'Xinche Launch Party', value: 20, colorIndex: 'graph-1' }, { label: 'New Line Release Event', value: 50, colorIndex: 'graph-2' }]} />
+          </Section>
+          <Section basis='1/2'>
+            <Title>Current Inventory and Adjustments with CarBar</Title>
             <Distribution
               series={[{ label: 'Sold', value: 40, colorIndex: 'graph-1' },
               { label: 'In-Stock', value: 30, colorIndex: 'accent-2' },
@@ -84,7 +94,6 @@ class AdminPanel extends Component {
             />
           </Section>
           {errorNode}
-
         </Article>
         <CommonFooter />
       </div>

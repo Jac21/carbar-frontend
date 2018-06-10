@@ -51,8 +51,7 @@ class CarBarAdmin extends Component {
       (response) => {
         if (response.status === 200) {
           this.setState({ showOkToast: true });
-        }
-        else if (response.status !== 200) {
+        } else if (response.status !== 200) {
           this.setState({ showWarningToast: true });
           console.log('Looks like there was a problem.');
         }
@@ -139,20 +138,24 @@ class CarBarAdmin extends Component {
             pad='medium'
             margin='small'
             colorIndex='light-2'>
-            <TextInput id='address-input'
-              name='address-input'
-              value={this.state.addressInputValue}
-              placeHolder='Event Address'
-              onDOMChange={this._onAddressInputDOMChange}
-              onSelect={this._onSelect} />
-            <Button
-              label='Get this party started 🎉'
-              onClick={this._onClick}
-              primary={true}
-              secondary={false}
-              accent={false}
-              critical={false}
-              plain={false} />
+            <div className='carbar-admin-inputs'>
+              <FormField>
+                <TextInput id='address-input'
+                  name='address-input'
+                  value={this.state.addressInputValue}
+                  placeHolder='Event Address'
+                  onDOMChange={this._onAddressInputDOMChange}
+                  onSelect={this._onSelect} />
+              </FormField>
+              <Button
+                label='Get this party started 🎉'
+                onClick={this._onClick}
+                primary={true}
+                secondary={false}
+                accent={false}
+                critical={false}
+                plain={false} />
+            </div>
           </Section>
           {errorNode}
 
