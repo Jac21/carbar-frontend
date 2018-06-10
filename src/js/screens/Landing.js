@@ -10,7 +10,6 @@ import Heading from 'grommet/components/Heading';
 import Notification from 'grommet/components/Notification';
 
 import LandingInputs from '../components/LandingInputs';
-import LandingInputButton from '../components/LandingSubmitButton';
 
 import { pageLoaded } from './utils';
 
@@ -57,7 +56,6 @@ class Landing extends Component {
                 CarBar
               </Heading>
               <LandingInputs />
-              <LandingInputButton />
             </Box>
           </Box>
         </Hero>
