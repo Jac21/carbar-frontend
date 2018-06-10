@@ -1,3 +1,6 @@
+/* Grommet styles import and custom overrides*/
+
+$form-field-input-color: black;
 @import '~grommet/scss/vanilla/index';
 .grommetux-hero:not(.grommetux-hero--stack) {
   position: initial !important;
@@ -12,4 +15,50 @@
 .grommetux-image--medium {
   width: 300px !important;
   padding-bottom: 1em;
+}
+
+.grommetux-button:not(.grommetux-button--box) {
+  padding: 6px 2.5em !important;
+}
+
+.grommetux-form-field.grommetux-form-field--size-medium {
+  border-color: $form-field-input-color !important;
+}
+
+.grommetux-text-input.grommetux-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $form-field-input-color;
+}
+
+.grommetux-text-input.grommetux-input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $form-field-input-color;
+}
+
+.grommetux-text-input.grommetux-input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $form-field-input-color;
+}
+
+.grommetux-text-input.grommetux-input:-moz-placeholder {
+  /* Firefox 18- */
+  color: $form-field-input-color;
+}
+
+input.grommetux-text-input.grommetux-input {
+  color: $form-field-input-color;
+}
+
+/* Custom classes */
+
+.landing-inputs-wrapper {
+  padding-left: 1em;
+}
+
+.padding-element-small {
+  padding: .5em;
+}
+
+.landing-link-button {
+  padding: 6px 0.5em !important;
 }

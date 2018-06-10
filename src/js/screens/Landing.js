@@ -6,12 +6,12 @@ import Hero from 'grommet/components/Hero';
 import Image from 'grommet/components/Image';
 import Box from 'grommet/components/Box';
 import Article from 'grommet/components/Article';
-import Heading from 'grommet/components/Heading';
 import Notification from 'grommet/components/Notification';
 import Section from 'grommet/components/Section';
 import Button from 'grommet/components/Button';
 
 import LandingInputs from '../components/LandingInputs';
+import CommonFooter from '../components/CommonFooter';
 
 import { pageLoaded } from './utils';
 
@@ -56,26 +56,36 @@ class Landing extends Component {
               primary={false}
               accent={false}
               critical={false}
-              plain={false} />
-            <s />
+              plain={false}
+              className='landing-link-button' />
+            <s className='padding-element-small' />
             <Button label='Vendor Login'
               href='/admin'
               primary={false}
               accent={false}
               critical={false}
-              plain={false} />
+              plain={false}
+              className='landing-link-button' />
+            <s className='padding-element-small' />
+            <Button label='Admin Login'
+              href='/carBarAdmin'
+              primary={false}
+              accent={false}
+              critical={false}
+              plain={false}
+              className='landing-link-button' />
           </Section>
-          <Box basis='1/2'
+          <Box basis='3/4'
             align='start'
-            pad='medium' />
-          <Box basis='1/2'
-            align='start'
-            pad='medium'>
+            pad='large'
+            primary={true}
+            full={true}>
             <Image src='/img/V1.png'
               size='medium' />
             <LandingInputs />
           </Box>
         </Hero>
+        <CommonFooter />
         {errorNode}
       </Article>
     );
