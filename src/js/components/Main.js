@@ -10,6 +10,7 @@ import Split from 'grommet/components/Split';
 import { navResponsive } from '../actions/nav';
 
 import AdminPanel from '../screens/AdminPanel';
+import CarBarAdmin from '../screens/CarBarAdmin';
 import Landing from '../screens/Landing';
 import Login from '../screens/Login';
 import Dashboard from '../screens/Dashboard';
@@ -51,6 +52,7 @@ class Main extends Component {
             <Switch>
               <Route exact={true} path='/' component={Landing} />
               <Route path='/admin' component={AdminPanel} />
+              <Route path='/carBarAdmin' component={CarBarAdmin} />
               <Route path='/landing' component={Landing} />
               <Route path='/login' component={Login} />
               <Route path='/dashboard' component={Dashboard} />
