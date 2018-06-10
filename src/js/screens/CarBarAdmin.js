@@ -13,6 +13,8 @@ import Anchor from 'grommet/components/Anchor';
 import Notification from 'grommet/components/Notification';
 import Section from 'grommet/components/Section';
 import Button from 'grommet/components/Button';
+import FormField from 'grommet/components/FormField';
+import TextInput from 'grommet/components/TextInput';
 import Toast from 'grommet/components/Toast';
 
 import CommonFooter from '../components/CommonFooter';
@@ -23,16 +25,23 @@ class CarBarAdmin extends Component {
   constructor() {
     super();
     this.state = {
-      showOkToast: false, showWarningToast: false
+      addressInputValue: '', showOkToast: false, showWarningToast: false
     };
     this._onClick = this._onClick.bind(this);
+    this._onAddressInputDOMChange = this._onAddressInputDOMChange.bind(this);
   }
+
   componentDidMount() {
     pageLoaded('CarBarAdmin');
   }
 
   componentWillUnmount() {
   }
+
+  _onAddressInputDOMChange(event) {
+    this.setState({ addressInputValue: event.target.value });
+  }
+
 
   _onClick() {
     fetch('http://localhost:3005/send', {
@@ -123,7 +132,19 @@ class CarBarAdmin extends Component {
               </Menu>
             </Box>
           </Header>
-          <Section basis='1/2'>
+          <Section basis='1/2'
+            justify='center'
+            align='center'
+            wrap={true}
+            pad='medium'
+            margin='small'
+            colorIndex='light-2'>
+            <TextInput id='address-input'
+              name='address-input'
+              value={this.state.addressInputValue}
+              placeHolder='Event Address'
+              onDOMChange={this._onAddressInputDOMChange}
+              onSelect={this._onSelect} />
             <Button
               label='Get this party started 🎉'
               onClick={this._onClick}
