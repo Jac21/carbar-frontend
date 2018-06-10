@@ -9,6 +9,7 @@ import Article from 'grommet/components/Article';
 import Notification from 'grommet/components/Notification';
 import Section from 'grommet/components/Section';
 import Button from 'grommet/components/Button';
+import Paragraph from 'grommet/components/Paragraph';
 
 import LandingInputs from '../components/LandingInputs';
 import CommonFooter from '../components/CommonFooter';
@@ -43,8 +44,8 @@ class Landing extends Component {
         <Hero background={<Image src='/img/three-full.jpg'
           fit='cover'
           full={true} />}
-          backgroundColorIndex='dark'
-          size='large'>
+        backgroundColorIndex='dark'
+        size='large'>
           <Section basis='1/2'
             align='end'
             alignContent='end'
@@ -82,6 +83,12 @@ class Landing extends Component {
             full={true}>
             <Image src='/img/V1.png'
               size='medium' />
+            <Paragraph size='large' className='landing-slogan'>
+              Connecting craft and community
+            </Paragraph>
+            <Paragraph size='large' className='landing-slogan'>
+              #localfirst #pdxpride
+            </Paragraph>
             <LandingInputs />
           </Box>
         </Hero>
