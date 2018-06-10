@@ -13,14 +13,17 @@ import Anchor from 'grommet/components/Anchor';
 import Notification from 'grommet/components/Notification';
 import Section from 'grommet/components/Section';
 import Button from 'grommet/components/Button';
+import Toast from 'grommet/components/Toast';
 
 import CommonFooter from '../components/CommonFooter';
 import { pageLoaded } from './utils';
+import { headers } from '../api/utils';
 
 class CarBarAdmin extends Component {
   constructor() {
     super();
     this.state = {
+      showOkToast: false, showWarningToast: false
     };
     this._onClick = this._onClick.bind(this);
   }
@@ -31,10 +34,47 @@ class CarBarAdmin extends Component {
   componentWillUnmount() {
   }
 
-  _onClick() { console.log('Clicked!'); }
+  _onClick() {
+    fetch('http://localhost:3005/send', {
+      method: 'GET',
+      headers: headers()
+    }).then(
+      (response) => {
+        if (response.statis === 200) {
+          this.setState({ showOkToast: true });
+        }
+        else if (response.status !== 200) {
+          this.setState({ showWarningToast: true });
+          console.log('Looks like there was a problem.');
+        }
+      }
+    )
+      .catch((err) => {
+        console.log('Fetch Error :-S', err);
+      });
+  }
 
   render() {
     const { error } = this.props;
+    const { showOkToast, showWarningToast } = this.state;
+    let toastNode;
+    if (showOkToast) {
+      toastNode = (
+        <Toast status='ok'
+          onClose={() =>
+            this.setState({ showOkToast: false })}>
+          Texts sent! 🎊
+        </Toast>
+      );
+    } else if (showWarningToast) {
+      toastNode = (
+        <Toast status='warning'
+          onClose={() =>
+            this.setState({ showWarningToast: false })}>
+          Unable to send texts at this moment 😢
+        </Toast>
+      );
+    }
 
     let errorNode;
     if (error) {
@@ -50,6 +90,7 @@ class CarBarAdmin extends Component {
 
     return (
       <div>
+        {toastNode}
         <Article primary={true} full={true}>
           <Header fixed={true}
             float={false}
