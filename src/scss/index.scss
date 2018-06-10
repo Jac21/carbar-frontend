@@ -1,1 +1,10 @@
 @import '~grommet/scss/vanilla/index';
+.grommetux-hero:not(.grommetux-hero--stack) {
+  position: initial !important;
+}
+
+.grommetux-hero--stack {
+  flex: unset !important;
+  display: unset !important;
+  position: unset !important;
+}

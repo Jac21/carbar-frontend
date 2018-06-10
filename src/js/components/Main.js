@@ -9,12 +9,14 @@ import Split from 'grommet/components/Split';
 // import NavSidebar from './NavSidebar';
 import { navResponsive } from '../actions/nav';
 
+import AdminPanel from '../screens/AdminPanel';
 import Landing from '../screens/Landing';
 import Login from '../screens/Login';
 import Dashboard from '../screens/Dashboard';
 import Tasks from '../screens/Tasks';
 import Task from '../screens/Task';
 import NotFound from '../screens/NotFound';
+import VendorSignUp from '../screens/VendorSignUp';
 
 class Main extends Component {
   constructor() {
@@ -48,11 +50,13 @@ class Main extends Component {
             {nav}
             <Switch>
               <Route exact={true} path='/' component={Landing} />
+              <Route path='/admin' component={AdminPanel} />
               <Route path='/landing' component={Landing} />
-              <Route path='/dashboard' component={Dashboard} />
               <Route path='/login' component={Login} />
+              <Route path='/dashboard' component={Dashboard} />
               <Route path='/tasks/:id' component={Task} />
               <Route path='/tasks' component={Tasks} />
+              <Route path='/vendorsignup' component={VendorSignUp} />
               <Route path='/*' component={NotFound} />
             </Switch>
           </Split>

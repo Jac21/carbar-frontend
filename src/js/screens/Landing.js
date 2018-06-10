@@ -8,6 +8,8 @@ import Box from 'grommet/components/Box';
 import Article from 'grommet/components/Article';
 import Heading from 'grommet/components/Heading';
 import Notification from 'grommet/components/Notification';
+import Section from 'grommet/components/Section';
+import Button from 'grommet/components/Button';
 
 import LandingInputs from '../components/LandingInputs';
 
@@ -38,29 +40,44 @@ class Landing extends Component {
 
     return (
       <Article primary={true} full={true}>
-        <Hero background={<Image src='/img/three.jpg'
+        <Hero background={<Image src='/img/three-full.jpg'
           fit='cover'
           full={true} />}
           backgroundColorIndex='dark'
           size='large'>
-          <Box direction='row'
-            justify='center'
-            align='center'>
-            <Box basis='1/2'
-              align='end'
-              pad='medium' />
-            <Box basis='1/2'
-              align='start'
-              pad='medium'>
-              <Heading margin='none'>
-                CarBar
-              </Heading>
-              <LandingInputs />
-            </Box>
+          <Section basis='1/2'
+            align='end'
+            alignContent='end'
+            direction='row'
+            pad='medium'
+            justify='end'>
+            <Button label='Vend With Us'
+              href='/vendorsignup'
+              primary={false}
+              accent={false}
+              critical={false}
+              plain={false} />
+            <s />
+            <Button label='Vendor Login'
+              href='/admin'
+              primary={false}
+              accent={false}
+              critical={false}
+              plain={false} />
+          </Section>
+          <Box basis='1/2'
+            align='start'
+            pad='medium' />
+          <Box basis='1/2'
+            align='start'
+            pad='medium'>
+            <Heading margin='none'>
+              CarBar
+            </Heading>
+            <LandingInputs />
           </Box>
         </Hero>
         {errorNode}
-
       </Article>
     );
   }
