@@ -1,9 +1,13 @@
-# carbar-frontend
+
+![logo](https://raw.githubusercontent.com/Jac21/carbar-frontend/master/media/V1.png)
 
 [![CircleCI](https://circleci.com/gh/Jac21/carbar-frontend.svg?style=shield)](https://circleci.com/gh/Jac21/carbar-frontend)
 
-This is a sample Grommet application for reference.
+Built using ReactJS, Redux, and the [Grommet](http://grommet.io/) component library.
 
+![current-state](https://raw.githubusercontent.com/Jac21/carbar-frontend/master/media/current-state.png)
+
+## Local Usage
 To run this application, execute the following commands:
 
   1. Install NPM modules
