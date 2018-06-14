@@ -5,7 +5,7 @@
   "description": "",
   "repository": "",
   "license": "",
-  "homepage": "https://jac21.github.io/carbar-frontend/",
+  "homepage": "https://jac21.github.io/carbar-frontend",
   "scripts": {
     "test": "grommet check",
     "dev-server": "nodemon ./server/dev",
