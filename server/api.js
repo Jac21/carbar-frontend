@@ -1,18 +1,35 @@
 import express from 'express';
-import { addSession, getTasks, getTask } from './data';
+import {
+  addSession,
+  getTasks,
+  getTask
+} from './data';
+import {
+  temporaryCredentials
+} from './env';
+
 
 const router = express.Router();
 
 router.post('/sessions', (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password || email === 'error') {
+  const {
+    email,
+    password
+  } = req.body;
+  if (!email || !password || email === 'error' || email !==
+    temporaryCredentials.temporaryUsername || password !==
+    temporaryCredentials.temporaryPassword) {
     res.statusMessage = 'Invalid email or password';
     res.status(401).end();
   } else {
     const name = email.split('@')[0].replace(/\.|_/, ' '); // simulated
     const now = new Date();
     const token = `token-${now.getTime()}`; // simulated
-    const session = { email, name, token };
+    const session = {
+      email,
+      name,
+      token
+    };
     addSession(token, session);
     res.json(session);
   }

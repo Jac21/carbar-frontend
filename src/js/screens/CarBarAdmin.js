@@ -71,7 +71,7 @@ class CarBarAdmin extends Component {
         <Toast status='ok'
           onClose={() =>
             this.setState({ showOkToast: false })}>
-          Texts sent! 🎊
+          Texts sent! <span role='img' aria-label='confetti'>🎊</span>
         </Toast>
       );
     } else if (showWarningToast) {
@@ -79,7 +79,7 @@ class CarBarAdmin extends Component {
         <Toast status='warning'
           onClose={() =>
             this.setState({ showWarningToast: false })}>
-          Unable to send texts at this moment 😢
+          Unable to send texts at this moment <span role='img' aria-label='sad-face'>😢</span>
         </Toast>
       );
     }
