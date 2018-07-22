@@ -8,7 +8,6 @@ import LoginForm from 'grommet/components/LoginForm';
 import Article from 'grommet/components/Article';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Paragraph from 'grommet/components/Paragraph';
 import Footer from 'grommet/components/Footer';
 import Logo from 'grommet/components/icons/Grommet';
 
@@ -54,10 +53,7 @@ class Login extends Component {
             justify='center'
             align='center'
           >
-            <Heading tag='h1' strong={true}>Carbar Frontend</Heading>
-            <Paragraph align='center' size='large'>
-              Development with Grommet is cool.
-            </Paragraph>
+            <Heading tag='h1' strong={true}>Carbar</Heading>
           </Section>
         </Article>
 

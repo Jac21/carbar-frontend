@@ -62,7 +62,7 @@ class Landing extends Component {
               className='landing-link-button' />
             <s className='padding-element-small' />
             <Button label='Vendor Login'
-              href='/admin'
+              href='/vendorAdmin'
               primary={false}
               accent={false}
               critical={false}

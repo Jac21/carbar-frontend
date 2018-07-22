@@ -18,9 +18,9 @@ import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import CommonFooter from '../components/CommonFooter';
 import { pageLoaded } from './utils';
 
-class AdminPanel extends Component {
+class VendorAdminPanel extends Component {
   componentDidMount() {
-    pageLoaded('AdminPanel');
+    pageLoaded('VendorAdminPanel');
   }
 
   componentWillUnmount() {
@@ -101,15 +101,15 @@ class AdminPanel extends Component {
   }
 }
 
-AdminPanel.defaultProps = {
+VendorAdminPanel.defaultProps = {
   error: undefined,
   task: undefined
 };
 
-AdminPanel.propTypes = {
+VendorAdminPanel.propTypes = {
   error: PropTypes.object
 };
 
-const select = state => ({ ...state.adminPanel });
+const select = state => ({ ...state.VendorAdminPanel });
 
-export default connect(select)(AdminPanel);
+export default connect(select)(VendorAdminPanel);
