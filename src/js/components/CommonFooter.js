@@ -30,9 +30,6 @@ class CommonFooter extends Component {
               Home
             </Anchor>
             <Anchor href='#'>
-              Support
-            </Anchor>
-            <Anchor href='#'>
               Contact
             </Anchor>
             <Anchor href='#'>

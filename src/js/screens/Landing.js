@@ -52,6 +52,14 @@ class Landing extends Component {
             direction='row'
             pad='medium'
             justify='end'>
+            <Button label='About Us'
+              href='/about'
+              primary={false}
+              accent={false}
+              critical={false}
+              plain={false}
+              className='landing-link-button about-us-nav-item' />
+            <s className='padding-element-small' />
             <Button label='Vend With Us'
               target='_blank'
               href='https://docs.google.com/forms/d/e/1FAIpQLScOlMm36vzY1QP55Qc0aSpXZBUN2H355IxS7NHifvN7d7fbIg/viewform'
@@ -59,15 +67,7 @@ class Landing extends Component {
               accent={false}
               critical={false}
               plain={false}
-              className='landing-link-button' />
-            <s className='padding-element-small' />
-            <Button label='Vendor Login'
-              href='/vendorAdmin'
-              primary={false}
-              accent={false}
-              critical={false}
-              plain={false}
-              className='landing-link-button' />
+              className='landing-link-button vend-with-us-nav-item' />
             <s className='padding-element-small' />
             <Button label='Admin Login'
               href='/carBarAdmin'
@@ -75,7 +75,7 @@ class Landing extends Component {
               accent={false}
               critical={false}
               plain={false}
-              className='landing-link-button' />
+              className='landing-link-button admin-login-nav-item' />
           </Section>
           <Box basis='3/4'
             align='start'

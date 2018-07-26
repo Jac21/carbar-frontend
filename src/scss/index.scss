@@ -1,9 +1,23 @@
 /* Grommet styles import and custom overrides*/
 
 $form-field-input-color: black;
+$primary-color: #D4EEEB;
+$hero-breakpoint: 735px;
 @import '~grommet/scss/vanilla/index';
 .grommetux-hero:not(.grommetux-hero--stack) {
   position: initial !important;
+}
+
+@media screen and (max-width: $hero-breakpoint) {
+  .grommetux-hero__background {
+    display: none;
+  }
+  .grommetux-hero {
+    background-color: $primary-color;
+  }
+  .admin-login-nav-item {
+    display: none;
+  }
 }
 
 .grommetux-hero--stack {
