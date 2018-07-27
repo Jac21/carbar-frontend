@@ -2,6 +2,7 @@
 
 $form-field-input-color: black;
 $primary-color: #D4EEEB;
+$secondary-color:#FFD2D1;
 $hero-breakpoint: 735px;
 @import '~grommet/scss/vanilla/index';
 .grommetux-hero:not(.grommetux-hero--stack) {
@@ -13,7 +14,7 @@ $hero-breakpoint: 735px;
     display: none;
   }
   .grommetux-hero {
-    background-color: $primary-color;
+    background: linear-gradient(to left bottom, $primary-color, $secondary-color);
   }
   .admin-login-nav-item {
     display: none;
