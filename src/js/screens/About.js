@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 
 import Article from 'grommet/components/Article';
 import Paragraph from 'grommet/components/Paragraph';
-import Header from 'grommet/components/Header';
-import Title from 'grommet/components/Title';
+import Headline from 'grommet/components/Headline';
 import Notification from 'grommet/components/Notification';
 import Section from 'grommet/components/Section';
 
@@ -36,27 +35,24 @@ class About extends Component {
 
     return (
       <div>
-        <Article primary={true} scrollStep={true}>
-          <Header fixed={true} float={false} size='xlarge' splash={false}>
-            <Title>About Us</Title>
-          </Header>
-          <Section basis='1/2'>
+        <Article scrollStep={true} controls={true}>
+          <Section pad='large' justify='center' align='center' full='vertical'>
+            <Headline margin='none'>About Us</Headline>
             <Paragraph>
               Natasha Torres (right) and her wife Himalaya Rao (left) founded
               CarBar in 2017. CarBar started as a nice way to catch up with
               friends after school. The two soon realized that they could bring
               a new face to how people party.
             </Paragraph>
-
-            <Paragraph>
-              Today, CarBar is a marketing service that connects local
-              businesses with new customers through pop-up events. Participants
-              enjoy selections of beer, wine, and cider products from new and
-              local vendors.
-            </Paragraph>
           </Section>
-          <Section basis='1/2'>
-            <Title>How CarBar Works</Title>
+          <Section
+            pad='large'
+            justify='center'
+            align='center'
+            full='vertical'
+            colorIndex='grey-4'
+          >
+            <Headline margin='none'>How CarBar Works</Headline>
             <Paragraph>
               CarBar is a marketing service that takes products from local
               wineries, breweries, and cider houses, and sets up pop-up events
@@ -75,19 +71,23 @@ class About extends Component {
               event. 2. Two cool ladies will follow up with you within a week.
             </Paragraph>
           </Section>
-          <Section basis='1/2'>
-            <Title>Join the Movement</Title>
+          <Section pad='large' justify='center' align='center' full='vertical'>
+            <Headline margin='none'>Join the Movement</Headline>
             <Paragraph>
               Planned events - August 11, 2018 (Lake Oswego) - September 2018
               (Portland) - October 2018 (Salem)
             </Paragraph>
           </Section>
-          <Section basis='1/2'>
-            <Title>Interested In Having CarBar Come To You?</Title>
+          <Section pad='large' justify='center' align='center' full='vertical'>
+            <Headline margin='none'>
+              Interested In Having CarBar Come To You?
+            </Headline>
             <Paragraph>Click here to fill out our survey!</Paragraph>
           </Section>
-          <Section basis='1/2'>
-            <Title>What To Be A Featured Vendor At A CarBar Event? </Title>
+          <Section pad='large' justify='center' align='center' full='vertical'>
+            <Headline margin='none'>
+              Want To Be A Featured Vendor At A CarBar Event?
+            </Headline>
             <Paragraph>
               Contact us at, or fill out this survey so we can help you even
               quicker!
