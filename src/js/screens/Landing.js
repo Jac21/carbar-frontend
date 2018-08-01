@@ -21,8 +21,7 @@ class Landing extends Component {
     pageLoaded('Landing');
   }
 
-  componentWillUnmount() {
-  }
+  componentWillUnmount() {}
 
   render() {
     const { error } = this.props;
@@ -41,49 +40,54 @@ class Landing extends Component {
 
     return (
       <Article primary={true} full={true}>
-        <Hero background={<Image src='/img/three-full.jpg'
-          fit='cover'
-          full={true} />}
+        <Hero
+          background={
+            <Image src='/img/three-full.jpg' fit='cover' full={true} />
+          }
           backgroundColorIndex='dark'
-          size='large'>
-          <Section basis='1/2'
+          size='large'
+        >
+          <Section
+            basis='1/2'
             align='end'
             alignContent='end'
             direction='row'
             pad='medium'
-            justify='end'>
-            <Button label='About Us'
+            justify='end'
+          >
+            <Button
+              label='About Us'
               href='/about'
               primary={false}
               accent={false}
               critical={false}
               plain={false}
-              className='landing-link-button about-us-nav-item' />
+              className='landing-link-button about-us-nav-item'
+            />
             <s className='padding-element-small' />
-            <Button label='Vend With Us'
+            <Button
+              label='Vend With Us'
               target='_blank'
               href='https://docs.google.com/forms/d/e/1FAIpQLScOlMm36vzY1QP55Qc0aSpXZBUN2H355IxS7NHifvN7d7fbIg/viewform'
               primary={false}
               accent={false}
               critical={false}
               plain={false}
-              className='landing-link-button vend-with-us-nav-item' />
+              className='landing-link-button vend-with-us-nav-item'
+            />
             <s className='padding-element-small' />
-            <Button label='Admin Login'
+            <Button
+              label='Admin Login'
               href='/carBarAdmin'
               primary={false}
               accent={false}
               critical={false}
               plain={false}
-              className='landing-link-button admin-login-nav-item' />
+              className='landing-link-button admin-login-nav-item'
+            />
           </Section>
-          <Box basis='3/4'
-            align='start'
-            pad='large'
-            primary={true}
-            full={true}>
-            <Image src='/img/V1.png'
-              size='medium' />
+          <Box basis='3/4' align='start' pad='large' primary={true} full={true}>
+            <Image src='/img/V1.png' size='medium' />
             <Paragraph size='large' className='landing-slogan'>
               Connecting craft and community
             </Paragraph>
