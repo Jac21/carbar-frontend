@@ -47,15 +47,17 @@ class LandingInputs extends Component {
     }).then(
       (response) => {
         if (response.status !== 200) {
-          console.log('Looks like there was a problem.');
+          this.setState({ showWarningToast: true });
+          console.log('Looks like there was a problem =(');
+        } else if (response.status === 200) {
+          this.setState({ showOkToast: true });
         }
       }
     )
       .catch((err) => {
+        this.setState({ showWarningToast: true });
         console.log('Fetch Error :-S', err);
       });
-
-    this.setState({ showOkToast: true });
   }
 
   render() {
