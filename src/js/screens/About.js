@@ -18,7 +18,7 @@ class About extends Component {
     pageLoaded('About');
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   render() {
     const { error } = this.props;
@@ -117,7 +117,10 @@ class About extends Component {
               </List>
             </Paragraph>
           </Section>
-          <Section pad='large' justify='center' align='center' full='vertical'>
+          <Section pad='large'
+            justify='center'
+            align='center'
+            full='vertical'>
             <Headline margin='none'>
               Interested In Having CarBar Come To You?
             </Headline>
@@ -125,6 +128,7 @@ class About extends Component {
               Click{' '}
               <a
                 href='https://docs.google.com/forms/d/e/1FAIpQLScOlMm36vzY1QP55Qc0aSpXZBUN2H355IxS7NHifvN7d7fbIg/viewform'
+                target='_blank'
                 rel='noopener noreferrer'
               >
                 here{' '}
@@ -140,6 +144,7 @@ class About extends Component {
               Contact us directly, or fill out{' '}
               <a
                 href='https://docs.google.com/forms/d/e/1FAIpQLScOlMm36vzY1QP55Qc0aSpXZBUN2H355IxS7NHifvN7d7fbIg/viewform'
+                target='_blank'
                 rel='noopener noreferrer'
               >
                 this survey{' '}

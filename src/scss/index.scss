@@ -9,18 +9,6 @@ $hero-breakpoint: 735px;
   position: initial !important;
 }
 
-@media screen and (max-width: $hero-breakpoint) {
-  .grommetux-hero__background {
-    display: none;
-  }
-  .grommetux-hero {
-    background: linear-gradient(to left bottom, $primary-color, $secondary-color);
-  }
-  .admin-login-nav-item {
-    display: none;
-  }
-}
-
 .grommetux-hero--stack {
   flex: unset !important;
   display: unset !important;
@@ -88,4 +76,19 @@ input.grommetux-text-input.grommetux-input {
 
 .admin-panel-wrapper {
   width: 95%;
+}
+
+@media screen and (max-width: $hero-breakpoint) {
+  .grommetux-hero__background {
+    display: none;
+  }
+  .grommetux-hero {
+    background: linear-gradient(to left bottom, $primary-color, $secondary-color);
+  }
+  .admin-login-nav-item {
+    display: none;
+  }
+  .grommetux-image--medium {
+    width: 327px !important;
+  }
 }
