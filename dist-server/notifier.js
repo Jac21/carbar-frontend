@@ -4,7 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
 
 var _ws = require('ws');
 
@@ -15,8 +21,6 @@ var _pathToRegexp = require('path-to-regexp');
 var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function parseQuery(string) {
   var params = string.split('&');
@@ -38,7 +42,7 @@ function parseQuery(string) {
 
 var Connection = function () {
   function Connection(socket, routes) {
-    _classCallCheck(this, Connection);
+    (0, _classCallCheck3.default)(this, Connection);
 
     this._requests = [];
     this._socket = socket;
@@ -49,7 +53,7 @@ var Connection = function () {
     this._socket.on('close', this.close.bind(this));
   }
 
-  _createClass(Connection, [{
+  (0, _createClass3.default)(Connection, [{
     key: '_validate',
     value: function _validate(request) {
       // gets all routes and check if there is a match
@@ -163,20 +167,19 @@ var Connection = function () {
       }
     }
   }]);
-
   return Connection;
 }();
 
 var Notifier = function () {
   function Notifier() {
-    _classCallCheck(this, Notifier);
+    (0, _classCallCheck3.default)(this, Notifier);
 
     this._connections = [];
     this._routes = [];
     this._notifyListeners = [];
   }
 
-  _createClass(Notifier, [{
+  (0, _createClass3.default)(Notifier, [{
     key: '_onConnection',
     value: function _onConnection(socket) {
       var connections = this._connections;
@@ -212,7 +215,6 @@ var Notifier = function () {
       });
     }
   }]);
-
   return Notifier;
 }();
 

@@ -8,9 +8,15 @@ var _data = require('./data');
 
 var _env = require('./env');
 
+var _routes = require('./src/routes');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = _express2.default.Router();
+
+router.get(_routes.AppRoutes[0].path, _routes.AppRoutes[0].action);
+router.get(_routes.AppRoutes[1].path, _routes.AppRoutes[1].action);
+router.post(_routes.AppRoutes[2].path, _routes.AppRoutes[2].action);
 
 router.post('/sessions', function (req, res) {
   var _req$body = req.body,
