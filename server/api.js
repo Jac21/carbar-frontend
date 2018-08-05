@@ -7,9 +7,16 @@ import {
 import {
   temporaryCredentials
 } from './env';
+import {
+  AppRoutes
+} from './src/routes';
 
 
 const router = express.Router();
+
+router.get(AppRoutes[0].path, AppRoutes[0].action);
+router.get(AppRoutes[1].path, AppRoutes[1].action);
+router.post(AppRoutes[2].path, AppRoutes[2].action);
 
 router.post('/sessions', (req, res) => {
   const {

@@ -1,0 +1,5 @@
+SELECT * FROM carbar.User;
+
+DELETE FROM carbar.User 
+WHERE
+    PHONE_NUMBER = '(956)286-8386';

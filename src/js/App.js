@@ -18,7 +18,8 @@ try {
 const localeData = getLocaleData(messages, locale);
 
 const pathname = window.location.pathname;
-if (pathname !== '/' && pathname !== '/login' && pathname !== '/about') {
+if (pathname !== '/' && pathname !== '/login' && pathname !== '/about'
+  && pathname !== '/user' && pathname !== '/users') {
   store.dispatch(initialize(pathname));
 }
 

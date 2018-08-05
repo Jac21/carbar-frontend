@@ -37,7 +37,7 @@ class LandingInputs extends Component {
       return;
     }
 
-    fetch('http://localhost:3005/users', {
+    fetch('http://localhost:8102/api/users', {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
