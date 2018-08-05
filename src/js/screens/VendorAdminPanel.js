@@ -88,9 +88,9 @@ class VendorAdminPanel extends Component {
             <Title>Current Inventory and Adjustments with CarBar</Title>
             <Distribution
               series={[{ label: 'Sold', value: 40, colorIndex: 'graph-1' },
-              { label: 'In-Stock', value: 30, colorIndex: 'accent-2' },
-              { label: 'Back-Ordered', value: 20, colorIndex: 'unset' },
-              { label: 'Receiving', value: 10, colorIndex: 'graph-1' }]}
+                { label: 'In-Stock', value: 30, colorIndex: 'accent-2' },
+                { label: 'Back-Ordered', value: 20, colorIndex: 'unset' },
+                { label: 'Receiving', value: 10, colorIndex: 'graph-1' }]}
             />
           </Section>
           {errorNode}
