@@ -71,7 +71,6 @@ createConnection().then(async connection => {
 
   // register all application routes
   AppRoutes.forEach(route => {
-    console.log(route);
     app[route.method](route.path, (request: Request, response: Response, next: Function) => {
       route.action(request, response)
         .then(() => next)

@@ -69,7 +69,6 @@ typeorm_1.createConnection().then((connection) => __awaiter(this, void 0, void 0
     });
     // register all application routes
     routes_1.AppRoutes.forEach(route => {
-        console.log(route);
         app[route.method](route.path, (request, response, next) => {
             route.action(request, response)
                 .then(() => next)
