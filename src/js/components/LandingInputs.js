@@ -13,7 +13,8 @@ class LandingInputs extends Component {
     super();
     this.state = {
       phoneInputValue: '', addressInputValue: '',
-      showOkToast: false, showWarningToast: false
+      showOkToast: false, showWarningToast: false,
+      showErrorToast: false
     };
     this._onPhoneInputDOMChange = this._onPhoneInputDOMChange.bind(this);
     this._onAddressInputDOMChange = this._onAddressInputDOMChange.bind(this);
@@ -55,13 +56,13 @@ class LandingInputs extends Component {
       }
     )
       .catch((err) => {
-        this.setState({ showWarningToast: true });
+        this.setState({ showErrorToast: true });
         console.log('Fetch Error :-S', err);
       });
   }
 
   render() {
-    const { showOkToast, showWarningToast } = this.state;
+    const { showOkToast, showWarningToast, showErrorToast } = this.state;
     let toastNode;
     if (showOkToast) {
       toastNode = (
@@ -77,6 +78,14 @@ class LandingInputs extends Component {
           onClose={() =>
             this.setState({ showWarningToast: false })}>
           Please ensure both your phone number and address are entered correctly.
+        </Toast>
+      );
+    } else if (showErrorToast) {
+      toastNode = (
+        <Toast status='critical'
+          onClose={() =>
+            this.setState({ showErrorToast: false })}>
+          We've run into an error saving your information, we'll try our best to resolve it soon!
         </Toast>
       );
     }
