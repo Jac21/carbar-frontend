@@ -14,7 +14,7 @@ class LandingInputs extends Component {
     this.state = {
       phoneInputValue: '', addressInputValue: '',
       showOkToast: false, showWarningToast: false,
-      showErrorToast: false
+      showErrorToast: false, normalizePhoneInput: true
     };
     this._onPhoneInputDOMChange = this._onPhoneInputDOMChange.bind(this);
     this._onAddressInputDOMChange = this._onAddressInputDOMChange.bind(this);
@@ -30,7 +30,7 @@ class LandingInputs extends Component {
   }
 
   _onClick() {
-    const phoneInputValue = this.state.phoneInputValue;
+    let phoneInputValue = this.state.phoneInputValue;
     const addressInputValue = this.state.addressInputValue;
 
     if (phoneInputValue === '' || addressInputValue === '') {
@@ -38,7 +38,11 @@ class LandingInputs extends Component {
       return;
     }
 
-    fetch('http://localhost:8102/api/users', {
+    if (this.state.normalizePhoneInput) {
+      phoneInputValue = phoneInputValue.replace(/'/g, '').replace(/'/g, '').replace(/\(|\)|-/g, '');
+    }
+
+    fetch('https://carbar.herokuapp.com/api/users', {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
