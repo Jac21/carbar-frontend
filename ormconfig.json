@@ -7,17 +7,17 @@
   "database": "heroku_ba6c211a0f22320",
   "synchronize": true,
   "entities": [
-    "src/entity/*.js"
+    "dist-server/src/entity/*.js"
   ],
   "subscribers": [
-    "src/subscriber/*.js"
+    "dist-server/src/subscriber/*.js"
   ],
   "migrations": [
-    "src/migration/*.js"
+    "dist-server/src/migration/*.js"
   ],
   "cli": {
-    "entitiesDir": "server/src/entity",
-    "migrationsDir": "server/src/migration",
-    "subscribersDir": "server/src/subscriber"
+    "entitiesDir": "dist-server/server/src/entity",
+    "migrationsDir": "dist-server/server/src/migration",
+    "subscribersDir": "dist-server/server/src/subscriber"
   }
 }
