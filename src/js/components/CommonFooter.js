@@ -21,18 +21,18 @@ class CommonFooter extends Component {
           align='center'
           pad={{ between: 'medium' }}>
           <Paragraph margin='none'>
-            © 2016 CarBar Labs
+            © 2018 CarBar Labs
           </Paragraph>
           <Menu direction='row'
             size='small'
             dropAlign={{ right: 'right' }}>
-            <Anchor href='/landing'>
+            <Anchor href='/'>
               Home
             </Anchor>
             <Anchor href='#'>
               Contact
             </Anchor>
-            <Anchor href='#'>
+            <Anchor href='https://github.com/Jac21/carbar-frontend'>
               About
             </Anchor>
           </Menu>
