@@ -2,6 +2,12 @@
   "name": "CarBar",
   "short_name": "CarBar",
   "icons": [{
+      "src": "\/img/V1.png",
+      "sizes": "600x600",
+      "type": "image\/png",
+      "density": "1.0"
+    },
+    {
       "src": "\/android-icon-36x36.png",
       "sizes": "36x36",
       "type": "image\/png",
@@ -38,7 +44,8 @@
       "density": "4.0"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "https://carbar.herokuapp.com/",
   "display": "standalone",
-  "theme_color": "#D4EEEB"
+  "theme_color": "#D4EEEB",
+  "background_color": "#FFD2D1"
 }

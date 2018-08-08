@@ -42,7 +42,7 @@ class Landing extends Component {
       <Article primary={true} full={true}>
         <Hero
           background={
-            <Image src='/img/three-full.jpg' fit='cover' full={true} />
+            <Image src='/img/three-full.jpg' fit='cover' full={true} alt='CarBar landing image' />
           }
           backgroundColorIndex='dark'
           size='large'
