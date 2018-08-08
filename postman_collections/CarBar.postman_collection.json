@@ -7,77 +7,208 @@
 	},
 	"item": [
 		{
+			"_postman_id": "a9b720a0-2291-44a3-84f7-86f364bd0d1d",
 			"name": "Users",
-			"description": "",
 			"item": [
 				{
-					"name": "Get All Users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:3000/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create User",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"PHONE_NUMBER\":\"(512)123-4567\",\n\t\"LOCATION\":\"Austin, TX\"\n}"
+					"_postman_id": "32211ad9-5ef1-45c9-97aa-007cde550ac6",
+					"name": "Local",
+					"item": [
+						{
+							"_postman_id": "65fa6f3f-fc12-4040-be56-53487152863e",
+							"name": "Get All Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3000/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:3000/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users"
-							]
+						{
+							"_postman_id": "3aaf4d12-b1e9-4aab-a0cb-3797067751f7",
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"PHONE_NUMBER\":\"(512)123-4567\",\n  \"LOCATION\":\"Austin, TX\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"_postman_id": "239baf7e-2e91-4217-aea3-f9010c46a84a",
+							"name": "Get Single User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3000/user/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Get Single User",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:3000/user/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"1"
-							]
+					"_postman_id": "7049823f-bc4d-4c5d-9bb7-c4a15e00b517",
+					"name": "Heroku",
+					"item": [
+						{
+							"_postman_id": "fba08c87-89b8-4c1f-82e3-3a8918f76d31",
+							"name": "Create User (Heroku Endpoint)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"PHONE_NUMBER\":\"(512)123-4567\",\n  \"LOCATION\":\"Austin, TX\"\n}"
+								},
+								"url": {
+									"raw": "https://carbar.herokuapp.com/api/users",
+									"protocol": "https",
+									"host": [
+										"carbar",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"_postman_id": "cc6f5eb0-f978-418c-ad55-46b2ed0612f8",
+							"name": "Get All Users (Heroku Endpoint)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://carbar.herokuapp.com/api/users",
+									"protocol": "https",
+									"host": [
+										"carbar",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"_postman_id": "d60b5253-9eff-418a-9989-0470b881ad0c",
+							"name": "Get Single User (Heroku Endpoint)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://carbar.herokuapp.com/api/user/11",
+									"protocol": "https",
+									"host": [
+										"carbar",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"11"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"_postman_id": "97e058c6-a2b9-498a-897a-b3de68a17661",
+			"name": "Send Messages",
+			"item": [
+				{
+					"_postman_id": "b24e230b-d0b9-43d1-8a07-4c275e4636a1",
+					"name": "Heroku",
+					"item": [
+						{
+							"_postman_id": "b5296471-fd0f-429a-a502-24c9451dff48",
+							"name": "Send Messages (Heroku Endpoint)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://carbar.herokuapp.com/api/send",
+									"protocol": "https",
+									"host": [
+										"carbar",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"send"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
 				}
 			]
 		}
