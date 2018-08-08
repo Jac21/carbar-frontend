@@ -34,7 +34,7 @@ class Login extends Component {
     const { dispatch } = this.props;
     const { router } = this.context;
     dispatch(login(fields.username, fields.password, () => (
-      router.history.push('/dashboard')
+      router.history.push('/carBarAdmin')
     )));
   }
 
@@ -72,7 +72,7 @@ class Login extends Component {
             size='small'
             pad={{ horizontal: 'medium', vertical: 'small' }}
           >
-            <span className='secondary'>&copy; 2017 Grommet Labs</span>
+            <span className='secondary'>&copy; 2018 CarBar Labs</span>
           </Footer>
         </Sidebar>
 

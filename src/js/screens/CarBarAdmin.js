@@ -25,7 +25,8 @@ class CarBarAdmin extends Component {
   constructor() {
     super();
     this.state = {
-      addressInputValue: '', showOkToast: false, showWarningToast: false
+      addressInputValue: '', showOkToast: false, showWarningToast: false,
+      showErrorToast: false,
     };
     this._onClick = this._onClick.bind(this);
     this._onAddressInputDOMChange = this._onAddressInputDOMChange.bind(this);
@@ -44,7 +45,7 @@ class CarBarAdmin extends Component {
 
 
   _onClick() {
-    fetch('http://localhost:3005/send', {
+    fetch('https://carbar.herokuapp.com/api/send', {
       method: 'GET',
       headers: headers()
     }).then(
@@ -53,18 +54,18 @@ class CarBarAdmin extends Component {
           this.setState({ showOkToast: true });
         } else if (response.status !== 200) {
           this.setState({ showWarningToast: true });
-          console.log('Looks like there was a problem.');
         }
       }
     )
       .catch((err) => {
+        this.setState({ showErrorToast: true });
         console.log('Fetch Error :-S', err);
       });
   }
 
   render() {
     const { error } = this.props;
-    const { showOkToast, showWarningToast } = this.state;
+    const { showOkToast, showWarningToast, showErrorToast } = this.state;
     let toastNode;
     if (showOkToast) {
       toastNode = (
@@ -80,6 +81,14 @@ class CarBarAdmin extends Component {
           onClose={() =>
             this.setState({ showWarningToast: false })}>
           Unable to send texts at this moment <span role='img' aria-label='sad-face'>😢</span>
+        </Toast>
+      );
+    } else if (showErrorToast) {
+      toastNode = (
+        <Toast status='critical'
+          onClose={() =>
+            this.setState({ showErrorToast: false })}>
+          Server error when attempting to send messages, investigate logs to ascertain issue.
         </Toast>
       );
     }
