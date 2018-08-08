@@ -2,8 +2,8 @@ import { userGetAllAction } from "./controller/UserGetAllAction";
 import { userGetByIdAction } from "./controller/UserGetByIdAction";
 import { userSaveAction } from "./controller/UserSaveAction";
 
-// import { sendMessage } from "./controller/SendMessage";
-// import { googleMaps } from "./controller/googleMaps";
+import { MessageController } from "./controller/MessageController";
+import { MapsController } from "./controller/MapsController";
 
 /**
  * All application routes.
@@ -23,15 +23,15 @@ export const AppRoutes = [
     path: "/users",
     method: "post",
     action: userSaveAction
+  },
+  {
+    path: "/send",
+    method: "get",
+    action: MessageController
+  },
+  {
+    path: "/maps",
+    method: "get",
+    action: MapsController
   }
-  // {
-  //     path: "/send",
-  //     method: "get",
-  //     action: sendMessage
-  // },
-  // {
-  //     path: "/maps",
-  //     method: "get",
-  //     action: googleMaps
-  // }
 ];
