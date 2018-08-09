@@ -58,8 +58,4 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-server/env.js
-src/sensitive.ts
-
 # End of https://www.gitignore.io/api/node

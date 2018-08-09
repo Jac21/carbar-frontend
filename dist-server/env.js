@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var temporaryCredentials = exports.temporaryCredentials = {
-  temporaryUsername: 'CarBarAdmin',
-  temporaryPassword: 'CarBar2018!'
+  temporaryUsername: process.env.TEMP_ADMIN_USERNAME,
+  temporaryPassword: process.env.TEMP_ADMIN_PASSWORD
 };
 
 exports.default = {

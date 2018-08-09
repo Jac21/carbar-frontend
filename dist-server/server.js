@@ -95,7 +95,6 @@ typeorm_1.createConnection().then(function (connection) {
                         });
                         // register all application routes
                         routes_1.AppRoutes.forEach(function (route) {
-                            console.log(route);
                             app[route.method](route.path, function (request, response, next) {
                                 route.action(request, response).then(function () {
                                     return next;
