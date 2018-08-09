@@ -14,22 +14,19 @@ const sensitive_1 = require("../sensitive");
 const sensitive_2 = require("../sensitive");
 function MessageController(request, response) {
     return __awaiter(this, void 0, void 0, function* () {
-        const client = require('twilio')(sensitive_1.accountSid, sensitive_1.authToken);
         const userRepository = typeorm_1.getManager().getRepository(User_1.User);
         const users = yield userRepository.find();
         const https = require('https');
         const googleMapsApiEndpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?';
-        const destinations = '&destinations=11800+Domain+Blvd+Austin+TX';
         const mode = '&mode=walking';
         const language = '&language=en-EN';
         const key = '&key=' + sensitive_2.googleMapsApiKey;
         const units = 'units=imperial';
         const _origins = '&origins=';
         users.forEach(function (user) {
-            var location = user.LOCATION;
-            location = location.split(' ').join('+');
-            console.log(location);
+            var location = user.LOCATION.split(' ').join('+');
             var origins = _origins + location;
+            const destinations = '&destinations=' + location;
             const googleMapsQuery = googleMapsApiEndpoint + units + origins + destinations + mode + language + key;
             console.log(googleMapsQuery);
             https.get(googleMapsQuery, (res) => {
@@ -48,11 +45,14 @@ function MessageController(request, response) {
                         const client = require('twilio')(sensitive_1.accountSid, sensitive_1.authToken);
                         client.messages
                             .create({
-                            body: 'Welcome to Car Bar! The Car Bar closest to you is at the HomeAway Office in the Domain. It is a ' + timeToDestination + ' walk away from you!',
+                            // this is message body for texting
+                            body: 'Welcome to Car Bar! The Car Bar closest to you is a ' + timeToDestination + ' walk away from you!',
+                            // this is CarBar's Twilio number
                             from: '+15037147388',
-                            //Add media to a message 
+                            // add media to a message 
                             mediaUrl: 'https://raw.githubusercontent.com/Jac21/carbar-frontend/master/public/img/V1.png',
-                            to: user.PHONE_NUMBER //Customer's number
+                            // user's number
+                            to: user.PHONE_NUMBER
                         })
                             .then(message => console.log(message.sid))
                             .catch(err => console.error(err));
@@ -66,7 +66,7 @@ function MessageController(request, response) {
             });
             console.log(user.PHONE_NUMBER);
         });
-        response.send('Send messages to all users within 15 mins walking distance HomeAway');
+        response.send('Send messages to all users within 15 mins walking distance');
     });
 }
 exports.MessageController = MessageController;

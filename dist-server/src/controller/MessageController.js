@@ -37,22 +37,20 @@ var sensitive_1 = require("../sensitive");
 var sensitive_2 = require("../sensitive");
 function MessageController(request, response) {
     return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-        var client, userRepository, users, https, googleMapsApiEndpoint, destinations, mode, language, key, units, _origins;
+        var userRepository, users, https, googleMapsApiEndpoint, mode, language, key, units, _origins;
 
         return _regenerator2.default.wrap(function _callee$(_context) {
             while (1) {
                 switch (_context.prev = _context.next) {
                     case 0:
-                        client = require('twilio')(sensitive_1.accountSid, sensitive_1.authToken);
                         userRepository = typeorm_1.getManager().getRepository(User_1.User);
-                        _context.next = 4;
+                        _context.next = 3;
                         return userRepository.find();
 
-                    case 4:
+                    case 3:
                         users = _context.sent;
                         https = require('https');
                         googleMapsApiEndpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?';
-                        destinations = '&destinations=11800+Domain+Blvd+Austin+TX';
                         mode = '&mode=walking';
                         language = '&language=en-EN';
                         key = '&key=' + sensitive_2.googleMapsApiKey;
@@ -60,10 +58,9 @@ function MessageController(request, response) {
                         _origins = '&origins=';
 
                         users.forEach(function (user) {
-                            var location = user.LOCATION;
-                            location = location.split(' ').join('+');
-                            console.log(location);
+                            var location = user.LOCATION.split(' ').join('+');
                             var origins = _origins + location;
+                            var destinations = '&destinations=' + location;
                             var googleMapsQuery = googleMapsApiEndpoint + units + origins + destinations + mode + language + key;
                             console.log(googleMapsQuery);
                             https.get(googleMapsQuery, function (res) {
@@ -79,13 +76,16 @@ function MessageController(request, response) {
                                     var numberOfMins = parseInt(timeToDestination.split(' ')[0]);
                                     console.log(numberOfMins);
                                     if (numberOfMins < 15) {
-                                        var _client = require('twilio')(sensitive_1.accountSid, sensitive_1.authToken);
-                                        _client.messages.create({
-                                            body: 'Welcome to Car Bar! The Car Bar closest to you is at the HomeAway Office in the Domain. It is a ' + timeToDestination + ' walk away from you!',
+                                        var client = require('twilio')(sensitive_1.accountSid, sensitive_1.authToken);
+                                        client.messages.create({
+                                            // this is message body for texting
+                                            body: 'Welcome to Car Bar! The Car Bar closest to you is a ' + timeToDestination + ' walk away from you!',
+                                            // this is CarBar's Twilio number
                                             from: '+15037147388',
-                                            //Add media to a message 
+                                            // add media to a message 
                                             mediaUrl: 'https://raw.githubusercontent.com/Jac21/carbar-frontend/master/public/img/V1.png',
-                                            to: user.PHONE_NUMBER //Customer's number
+                                            // user's number
+                                            to: user.PHONE_NUMBER
                                         }).then(function (message) {
                                             return console.log(message.sid);
                                         }).catch(function (err) {
@@ -101,9 +101,9 @@ function MessageController(request, response) {
                             });
                             console.log(user.PHONE_NUMBER);
                         });
-                        response.send('Send messages to all users within 15 mins walking distance HomeAway');
+                        response.send('Send messages to all users within 15 mins walking distance');
 
-                    case 15:
+                    case 13:
                     case "end":
                         return _context.stop();
                 }

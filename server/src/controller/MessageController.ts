@@ -7,14 +7,11 @@ import { googleMapsApiKey } from "../sensitive";
 
 export async function MessageController(request: Request, response: Response) {
 
-  const client = require('twilio')(accountSid, authToken);
-
   const userRepository = getManager().getRepository(User);
   const users = await userRepository.find();
 
   const https = require('https');
   const googleMapsApiEndpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?';
-  const destinations = '&destinations=11800+Domain+Blvd+Austin+TX';
   const mode = '&mode=walking';
   const language = '&language=en-EN';
   const key = '&key=' + googleMapsApiKey;
@@ -23,10 +20,10 @@ export async function MessageController(request: Request, response: Response) {
 
   users.forEach(function (user) {
 
-    var location = user.LOCATION;
-    location = location.split(' ').join('+');
-    console.log(location);
+    var location = user.LOCATION.split(' ').join('+');
+
     var origins = _origins + location;
+    const destinations = '&destinations=' + location;
 
     const googleMapsQuery = googleMapsApiEndpoint + units + origins + destinations + mode + language + key;
 
@@ -54,11 +51,14 @@ export async function MessageController(request: Request, response: Response) {
 
           client.messages
             .create({
-              body: 'Welcome to Car Bar! The Car Bar closest to you is at the HomeAway Office in the Domain. It is a ' + timeToDestination + ' walk away from you!', // this is message body for texting
-              from: '+15037147388', //This is CarBar's Twilio number
-              //Add media to a message 
+              // this is message body for texting
+              body: 'Welcome to Car Bar! The Car Bar closest to you is a ' + timeToDestination + ' walk away from you!',
+              // this is CarBar's Twilio number
+              from: '+15037147388',
+              // add media to a message 
               mediaUrl: 'https://raw.githubusercontent.com/Jac21/carbar-frontend/master/public/img/V1.png',
-              to: user.PHONE_NUMBER //Customer's number
+              // user's number
+              to: user.PHONE_NUMBER
             })
             .then(message => console.log(message.sid))
             .catch(err => console.error(err));
@@ -76,6 +76,6 @@ export async function MessageController(request: Request, response: Response) {
     console.log(user.PHONE_NUMBER);
   })
 
-  response.send('Send messages to all users within 15 mins walking distance HomeAway');
+  response.send('Send messages to all users within 15 mins walking distance');
 
 }
