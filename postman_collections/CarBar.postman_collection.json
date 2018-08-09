@@ -7,15 +7,15 @@
 	},
 	"item": [
 		{
-			"_postman_id": "a9b720a0-2291-44a3-84f7-86f364bd0d1d",
+			"_postman_id": "d4bf95e5-c0c9-4413-aa96-f0c251904f4b",
 			"name": "Users",
 			"item": [
 				{
-					"_postman_id": "32211ad9-5ef1-45c9-97aa-007cde550ac6",
+					"_postman_id": "e3f5607d-df17-42b8-83f5-82f63373019c",
 					"name": "Local",
 					"item": [
 						{
-							"_postman_id": "65fa6f3f-fc12-4040-be56-53487152863e",
+							"_postman_id": "fb0b6808-e29a-4814-938d-f94a099f77c1",
 							"name": "Get All Users",
 							"request": {
 								"method": "GET",
@@ -36,7 +36,7 @@
 							"response": []
 						},
 						{
-							"_postman_id": "3aaf4d12-b1e9-4aab-a0cb-3797067751f7",
+							"_postman_id": "6daab148-a128-4729-ba68-75dacaacba26",
 							"name": "Create User",
 							"request": {
 								"method": "POST",
@@ -65,7 +65,7 @@
 							"response": []
 						},
 						{
-							"_postman_id": "239baf7e-2e91-4217-aea3-f9010c46a84a",
+							"_postman_id": "d0cdbaaf-34e8-40a0-88b2-2311375dc9b1",
 							"name": "Get Single User",
 							"request": {
 								"method": "GET",
@@ -90,11 +90,11 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"_postman_id": "7049823f-bc4d-4c5d-9bb7-c4a15e00b517",
+					"_postman_id": "50cb0c6a-d8a4-4b25-9f06-e3ec1e9464da",
 					"name": "Heroku",
 					"item": [
 						{
-							"_postman_id": "fba08c87-89b8-4c1f-82e3-3a8918f76d31",
+							"_postman_id": "f340c6c2-a152-40a1-ab25-6f5fea2483ba",
 							"name": "Create User (Heroku Endpoint)",
 							"request": {
 								"method": "POST",
@@ -125,7 +125,7 @@
 							"response": []
 						},
 						{
-							"_postman_id": "cc6f5eb0-f978-418c-ad55-46b2ed0612f8",
+							"_postman_id": "2a5ceece-6bd2-4619-b3e7-a30edff34470",
 							"name": "Get All Users (Heroku Endpoint)",
 							"request": {
 								"method": "GET",
@@ -148,7 +148,7 @@
 							"response": []
 						},
 						{
-							"_postman_id": "d60b5253-9eff-418a-9989-0470b881ad0c",
+							"_postman_id": "f39f5b1a-7ac7-4aa0-bb51-c5587d35c1f9",
 							"name": "Get Single User (Heroku Endpoint)",
 							"request": {
 								"method": "GET",
@@ -177,15 +177,15 @@
 			]
 		},
 		{
-			"_postman_id": "97e058c6-a2b9-498a-897a-b3de68a17661",
+			"_postman_id": "0a111db7-510a-442d-ad45-65f755fe6337",
 			"name": "Send Messages",
 			"item": [
 				{
-					"_postman_id": "b24e230b-d0b9-43d1-8a07-4c275e4636a1",
+					"_postman_id": "37258d43-2bd9-408d-994b-e4ae8fce57b4",
 					"name": "Heroku",
 					"item": [
 						{
-							"_postman_id": "b5296471-fd0f-429a-a502-24c9451dff48",
+							"_postman_id": "2dd7312a-3a69-42f5-8077-202fbeb8441e",
 							"name": "Send Messages (Heroku Endpoint)",
 							"request": {
 								"method": "GET",
@@ -199,6 +199,35 @@
 										"herokuapp",
 										"com"
 									],
+									"path": [
+										"api",
+										"send"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "21e06c14-7123-4f66-a9a3-08b64ad64a54",
+					"name": "Local",
+					"item": [
+						{
+							"_postman_id": "0892721b-ac23-42b7-982c-0d6c0fb5d3f4",
+							"name": "Send Messages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8102/api/send",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8102",
 									"path": [
 										"api",
 										"send"
