@@ -4,7 +4,6 @@ const UserGetAllAction_1 = require("./controller/UserGetAllAction");
 const UserGetByIdAction_1 = require("./controller/UserGetByIdAction");
 const UserSaveAction_1 = require("./controller/UserSaveAction");
 const MessageController_1 = require("./controller/MessageController");
-const MapsController_1 = require("./controller/MapsController");
 /**
  * All application routes.
  */
@@ -28,11 +27,6 @@ exports.AppRoutes = [
         path: "/send",
         method: "get",
         action: MessageController_1.MessageController
-    },
-    {
-        path: "/maps",
-        method: "get",
-        action: MapsController_1.MapsController
     }
 ];
 //# sourceMappingURL=routes.js.map

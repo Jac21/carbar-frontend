@@ -3,7 +3,6 @@ import { userGetByIdAction } from "./controller/UserGetByIdAction";
 import { userSaveAction } from "./controller/UserSaveAction";
 
 import { MessageController } from "./controller/MessageController";
-import { MapsController } from "./controller/MapsController";
 
 /**
  * All application routes.
@@ -28,10 +27,5 @@ export const AppRoutes = [
     path: "/send",
     method: "get",
     action: MessageController
-  },
-  {
-    path: "/maps",
-    method: "get",
-    action: MapsController
   }
 ];

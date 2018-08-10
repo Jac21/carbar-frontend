@@ -18,14 +18,13 @@ router.get(_routes.AppRoutes[0].path, _routes.AppRoutes[0].action);
 router.get(_routes.AppRoutes[1].path, _routes.AppRoutes[1].action);
 router.post(_routes.AppRoutes[2].path, _routes.AppRoutes[2].action);
 router.get(_routes.AppRoutes[3].path, _routes.AppRoutes[3].action);
-router.get(_routes.AppRoutes[4].path, _routes.AppRoutes[4].action);
 
 router.post('/sessions', function (req, res) {
   var _req$body = req.body,
       email = _req$body.email,
       password = _req$body.password;
 
-  if (!email || !password || email === 'error' || email !== _env.temporaryCredentials.temporaryUsername || password !== _env.temporaryCredentials.temporaryPassword) {
+  if (!email || !password || email === 'error' || email !== _env.temporaryUsername || password !== _env.temporaryPassword) {
     res.statusMessage = 'Invalid email or password';
     res.status(401).end();
   } else {
