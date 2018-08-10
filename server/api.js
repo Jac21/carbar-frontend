@@ -16,8 +16,8 @@ const router = express.Router();
 router.get(AppRoutes[0].path, AppRoutes[0].action);
 router.get(AppRoutes[1].path, AppRoutes[1].action);
 router.post(AppRoutes[2].path, AppRoutes[2].action);
-router.get(AppRoutes[3].path, AppRoutes[1].action);
-router.get(AppRoutes[4].path, AppRoutes[1].action);
+router.get(AppRoutes[3].path, AppRoutes[3].action);
+router.get(AppRoutes[4].path, AppRoutes[4].action);
 
 router.post('/sessions', (req, res) => {
   const {
