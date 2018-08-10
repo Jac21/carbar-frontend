@@ -81,7 +81,7 @@ function MessageController(request, response) {
                                             // this is message body for texting
                                             body: 'Welcome to Car Bar! The Car Bar closest to you is a ' + timeToDestination + ' walk away from you!',
                                             // this is CarBar's Twilio number
-                                            from: '+15037147388',
+                                            from: '+19548668791',
                                             // add media to a message 
                                             mediaUrl: 'https://raw.githubusercontent.com/Jac21/carbar-frontend/master/public/img/V1.png',
                                             // user's number
